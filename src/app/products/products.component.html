@@ -1,0 +1,40 @@
+<button (click)="logout()" style="float: right;" class="btn btn-primary">Log Out</button>
+
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a>
+                <h5>All products</h5>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <h5>Cakes</h5>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <h5>Pizzas</h5>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <h5>Burgers</h5>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of products">
+            <div class="card col-md-3">
+                <img src="{{item.imageUrl}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
